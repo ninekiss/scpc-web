@@ -7,11 +7,19 @@ defineProps<{
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a target="_blank" href="https://vitejs.dev/">Vite</a> +
-      <a target="_blank" href="https://v3.vuejs.org/">Vue 3</a>. What's next?
-    </h3>
+    <h3>Starcitizen Chinese Player Community.</h3>
+    <div class="net-link">
+      <p>
+        <span>星际公民官方网站：</span>
+        <a target="_blank" href="https://robertsspaceindustries.com/"
+          >https://robertsspaceindustries.com/</a
+        >
+      </p>
+      <p>
+        <span>星际公民汉化组：</span>
+        <a target="_blank" href="https://starcitizenzw.com/">https://starcitizenzw.com/</a>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -36,5 +44,8 @@ h3 {
   .greetings h3 {
     text-align: left;
   }
+}
+.net-link {
+  margin: 50px auto;
 }
 </style>
