@@ -3,5 +3,5 @@ import TheWelcome from '@/components/TheWelcome.vue'
 </script>
 
 <template>
-  <main></main>
+  <div class="about"><h1>Coming soon...</h1></div>
 </template>
