@@ -1,6 +1,6 @@
-# scp-web
+# scpc-web
 
-It's may be https://scpc.gg
+http://scpc.games
 
 星际公民中文玩家社区（SCPC）前端项目
 
