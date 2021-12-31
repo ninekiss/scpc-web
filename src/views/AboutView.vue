@@ -1,6 +1,5 @@
 <template>
-  <div class="about">
-  </div>
+  <div class="about"></div>
 </template>
 
 <style>
