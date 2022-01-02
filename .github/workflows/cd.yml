@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ssh test
-        run: ./script/deploy.sh
+        run: ./scrpit/deploy.sh
