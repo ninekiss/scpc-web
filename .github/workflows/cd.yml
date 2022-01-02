@@ -1,0 +1,12 @@
+name: cd
+
+on:
+  push: [ci]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: ssh test
+        run: ssh root:123@127.0.0.1 
