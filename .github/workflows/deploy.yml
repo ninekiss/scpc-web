@@ -42,5 +42,7 @@ jobs:
 
     deploy:
       needs: [build]
-      - name: Build dist
-        run: curl baidu.com
+      runs-on: ubuntu-latest
+      steps:
+        - name: Build dist
+          run: curl baidu.com
