@@ -40,9 +40,9 @@ jobs:
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
-    deploy:
-      needs: [build]
-      runs-on: ubuntu-latest
-      steps:
-        - name: Build dist
-          run: curl baidu.com
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build dist
+        run: curl baidu.com
