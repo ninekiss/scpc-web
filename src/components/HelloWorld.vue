@@ -12,12 +12,12 @@ defineProps<{
       <p>
         <span>星际公民官方网站：</span>
         <a target="_blank" href="https://robertsspaceindustries.com/"
-          >https://robertsspaceindustries.com/</a
+          >https://robertsspaceindustries.com</a
         >
       </p>
       <p>
         <span>星际公民汉化组：</span>
-        <a target="_blank" href="https://starcitizenzw.com/">https://starcitizenzw.com/</a>
+        <a target="_blank" href="https://starcitizenzw.com/">https://starcitizenzw.com</a>
       </p>
     </div>
   </div>
