@@ -1,7 +1,8 @@
 name: cd
 
 on:
-  push: [ci]
+  push:
+    branches: [ci]
 
 jobs:
   test:
