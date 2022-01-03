@@ -1,9 +1,10 @@
-name: deploy
+name: test deploy
 
 on:
   push:
     branches:
-    - main
+    - dev
+    - test
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,18 +35,18 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:latest
+          tags: ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:alpha
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
   deploy:
     needs: [build]
-    runs-on: self-hosted
+    runs-on: [self-hosted, scpc-test]
     steps:
       - name: Deploy
         run: |
-          sudo docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          sudo docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }} docker.io
           sudo docker rm -f scpc-web
-          sudo docker image rm ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:latest
-          sudo docker pull ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:latest
-          sudo docker run --name scpc-web -p ${{secrets.SCPC_PORT}}:80 --restart=always -d ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:latest
+          sudo docker image rm ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:alpha
+          sudo docker pull ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:alpha
+          sudo docker run --name scpc-web -p ${{secrets.SCPC_PORT}}:80 --restart=always -d ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:alpha
