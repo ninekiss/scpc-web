@@ -49,21 +49,4 @@ jobs:
           sudo docker rm -f scpc-web
           sudo docker image rm ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:latest
           sudo docker pull ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:latest
-          sudo docker run --name scpc-web -p ${{secrets.SCPC_PORT}}:80 -d ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:latest
-  # deploy:
-  #   needs: [build]
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Deploy
-  #       uses: appleboy/ssh-action@master
-  #       with:
-  #         host: ${{ secrets.DEPLOY_HOST }}
-  #         username: ${{ secrets.DEPLOY_USERNAME }}
-  #         key: ${{ secrets.DEPLOY_KEY }}
-  #         port: ${{ secrets.DEPLOY_PORT }}
-  #         script: |
-  #           sudo docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-  #           sudo docker rm -f scpc-web
-  #           sudo docker image rm ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:latest
-  #           sudo docker pull ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:latest
-  #           sudo docker run --name scpc-web -p ${{secrets.SCPC_PORT}}:80 -d ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:latest
+          sudo docker run --name scpc-web -p ${{secrets.SCPC_PORT}}:80 --restart=always -d ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:latest
