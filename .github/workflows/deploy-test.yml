@@ -45,7 +45,7 @@ jobs:
     steps:
       - name: Deploy
         run: |
-          sudo docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          sudo docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }} docker.io
           sudo docker rm -f scpc-web
           sudo docker image rm ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:alpha
           sudo docker pull ${{secrets.DOCKER_HUB_USERNAME}}/scpc-web:alpha
