@@ -12,6 +12,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
         <router-link to="/about">关于我们</router-link>
       </nav>
 
+
       <HelloWorld msg="星际公民中文玩家社区" />
     </div>
   </header>
