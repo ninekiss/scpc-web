@@ -2,9 +2,9 @@
 
 http://scpc.games
 
-星际公民中文玩家社区（SCPC）前端项目
+SCPC 星际公民中文玩家社区前端项目
 
-StarCiziten Chinese Player Community (SCPC) Web Side Frond End Project.
+SCPC StarCiziten Chinese Player Community Web Side Frond End Project.
 
 
 
